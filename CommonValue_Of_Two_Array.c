@@ -10,6 +10,8 @@ int main()
     int arr1[a];
     int arr2[b];
     int arr3[c];
+    int d=0;
+    int duplicate[d];
 
     for (int i = 0; i < a; i++)
     {
@@ -20,6 +22,9 @@ int main()
         scanf("%d", &arr2[i]);
     }
 
+    // program to check equal value condition of 2 array 
+    // making a duplicate array of same size as 3rd array with values at all index -1
+
     for (int i = 0; i < a; i++)
     {
 
@@ -29,25 +34,66 @@ int main()
             if (arr1[i] == arr2[j])
             {
                 arr3[c++] = arr1[i];
+                duplicate[d++]=-1;
+                break;
                
             }
         }
     }
+     
 
-    // Program To print distinct elements from an array
-    int i,j;
-    for ( i = 0; i < c; i++)
+    // Program to print third array and duplicate array
+    printf("\nthird array ");
+    for(int i=0;i<c;i++)
     {
-        
-        for (j = 0; j < i; j++)
+        printf("%d ",arr3[i]);
+    }
+    printf("\nDuplicate array ");
+
+    for(int i=0;i<d;i++)
+    {
+        printf("%d ",duplicate[i]);
+    }
+
+
+
+    // Program To print UNIQUE  elements from an array
+    
+    for (int i = 0; i < c; i++)
+    {
+        int count=1;
+        for (int j = i+1; j < c; j++)
         {
 
             if (arr3[i] == arr3[j])
             {
-                break;
+                duplicate[j]=0;
+                count++;
             }
         }
-        if(j==i)
+        if(duplicate[i]!=0)
+        {
+            duplicate[i]=count;
+        }
+    }
+
+    // Program To print UNIQUE elements from an array
+    printf("\nUNIQUE ELEMENT IN ARRAY 3\n");
+    for(int i=0;i<c;i++)
+    {
+        if(duplicate[i]==1)
+        {
+            printf("%d ",arr3[i]);
+        }
+        
+    }
+
+    // Program To print DUPLICATE  elements from an array
+    printf("\nDuplicate ELEMENT IN ARRAY 3\n");
+    for(int i=0;i<c;i++)
+    {
+        
+        if(duplicate[i]>1)
         {
             printf("%d ",arr3[i]);
         }
