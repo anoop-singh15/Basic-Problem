@@ -7,6 +7,11 @@ Kefa decided to make some money doing business on the Internet for exactly n day
 Help Kefa cope with this task!
 */
 
+/*  
+    TIME COMPLEXITY----> 1918ms
+    Space Complexity--->  400kb
+*/
+
 int main()
 {
     int a, count, count2 = -1;
