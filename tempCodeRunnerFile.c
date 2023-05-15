@@ -1,2 +1,1 @@
-
-        }
+int arrmax(int *arr, int size)
