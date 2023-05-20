@@ -1,1 +1,1 @@
-int arrmax(int *arr, int size)
+     printf("%d\n", a);
